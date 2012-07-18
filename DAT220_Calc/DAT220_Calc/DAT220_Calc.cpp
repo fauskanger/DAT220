@@ -16,7 +16,7 @@ int _tmain(int argc, _TCHAR* argv[])
 }
 
 void noClosingWindow() {
-	std::cout << "\n\nPress Enter to exit . . .";
+	std::cout << "\n\nPress Enter to exit . . .\n\n";
 	std::cin.get();
 }
 
