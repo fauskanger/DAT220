@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 
-void noCloseWindow();
+void noClosingWindow();
 
 int _tmain(int argc, _TCHAR* argv[])
 {
@@ -11,11 +11,11 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	std::cout << x;
 
-	noCloseWindow();
+	noClosingWindow();
 	return 0;
 }
 
-void noCloseWindow() {
+void noClosingWindow() {
 	std::cout << "\n\nPress Enter to exit . . .";
 	std::cin.get();
 }
