@@ -2,8 +2,7 @@
 //
 
 #include "stdafx.h"
-
-void noClosingWindow();
+#include "DAT220_Calc.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
