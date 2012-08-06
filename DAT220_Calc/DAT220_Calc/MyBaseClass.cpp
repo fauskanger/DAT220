@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "MyBaseClass.h"
+#include <string.h>
 
 
 MyBaseClass::MyBaseClass(void)
@@ -36,22 +37,26 @@ int MyBaseClass::getId()
 	return id;
 }
 
-void MyBaseClass::doMagic()
+void MyBaseClass::identifySelf()
 {
 	if(name!=0) 
 	{
-		int i = 0;
-		while (getName()[i])
-		{
-			std::cout << getName()[i++];
-			//getName()[i++] = '0';
-			char* c = getName();
-			//*c = '0';
-			//name = "sds";
-			name[0] = 'F';
-		}
+		std::cout << "\nAdress: " << int(name);
 
-		std::cout << "\n";
+		std::cout << "\nPrinting <name>: \n";
+		
+		char* nameCopy = new char[strlen(getName())];
+		char* alts = "oOo.";
+		int numberOfAlts = strlen(alts);
+
+		int letterIndex = 0;
+		while ( getName()[letterIndex] )
+		{
+			std::cout << getName()[letterIndex];
+			nameCopy[letterIndex++] = *(alts+letterIndex%numberOfAlts);
+		}
+		nameCopy[letterIndex] = 0; // Zero-terminated
+		setName(nameCopy);
 
 		std::cout << "\nMagic (" << className << "): The name is \"" << getName() 
 			<< "\" and I have the number " << number << std::endl;
@@ -61,4 +66,11 @@ void MyBaseClass::doMagic()
 char* MyBaseClass::getName()
 {
 	return name;
+}
+
+void MyBaseClass::setName( char* c )
+{
+	//char* tmp = this->name;
+	this->name = c;
+	//delete tmp;
 }

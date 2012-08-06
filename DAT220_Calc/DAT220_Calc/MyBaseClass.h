@@ -8,11 +8,12 @@ public:
 	int number;
 	int getId();
 	void setId(int=1);
-	void doMagic();
+	void identifySelf();
 	char* getName();
 
 	MyBaseClass(void);
 	MyBaseClass(int _id, char* _name,int _number);
 	~MyBaseClass(void);
+	void setName(char* c);
 };
 

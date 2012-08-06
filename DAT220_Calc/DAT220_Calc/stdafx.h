@@ -5,11 +5,19 @@
 
 #pragma once
 
+#ifdef _UNICODE
+#define _tcout wcout
+#else
+#define _tcout cout
+#endif
+
 #include "targetver.h"
 
 #include <stdio.h>
 #include <tchar.h>
 #include <iostream>
+#include <sstream>
+#include <string>
 
 
 

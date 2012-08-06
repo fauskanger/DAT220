@@ -4,18 +4,25 @@
 #include "stdafx.h"
 #include "DAT220_Calc.h"
 
+typedef char* ost;
+
 int _tmain(int argc, _TCHAR* argv[])
 {
-	char* x = "hehe";
-	std::cout << x;
+	for(int i=0; i<argc; i++) {
+// 		for(int ii=0; argv[i][ii]; ii++) {
+// 			std::cout << char(argv[i][ii]);
+// 		}
+// 		
+		std::wcout << argv[i];
+		std::cout << std::endl;
+	}
 
-	MyBaseClass *numberOne = new MyBaseClass(1,"The first class",14);
-	MyExtendingClass *ex1 = new MyExtendingClass(2,"The first class",25);
-	MyOtherExtendingClass *ex2 = new MyOtherExtendingClass();
+	std::stringstream ss;
+	std::string mystring;
 
-	printMagic(numberOne);
-	//printMagic(ex1);
-	//printMagic(ex2);
+	ss << "Hva er ÆøåÆØÅ?";
+	mystring = ss.str();
+	std::wcout << mystring;
 
 
 	noClosingWindow();
@@ -26,10 +33,5 @@ void noClosingWindow()
 {
 	std::cout << "\n\nPress Enter to exit . . .\n\n";
 	std::cin.get();
-}
-
-void printMagic(MyBaseClass *inputClass) 
-{
-	inputClass->doMagic();
 }
 
