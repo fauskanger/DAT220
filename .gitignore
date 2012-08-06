@@ -65,4 +65,5 @@ BuildLog.htm
 ipch
 *.sdf
 *.opensdf
+*.log
 DAT220_Calc/DAT220_Calc.sln
